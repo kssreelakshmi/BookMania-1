@@ -1,0 +1,32 @@
+/* .box{
+    background-color: rgb(230, 209, 182);
+    height: 100% ;
+    width: 100%;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.head{
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.form{
+    align-items: center;
+    justify-content: center;
+}
+.form-label{
+    display: flex;
+    flex-direction: row;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+}
+.form-input{
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    align-items: center;
+    justify-content: center;
+} */
