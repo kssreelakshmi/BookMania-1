@@ -9,8 +9,9 @@ const Effect = () => {
     },[otherCount])
   return (
     <div>
+
         <h3>{count}times</h3>
-        <button onClick={()=>setCount(count+1)}>Increase</button>
+        <button onClick={()=>setCount(count+1)}></button>
         <h3>{otherCount}times</h3>
         <button onClick={()=>setOtherCount(otherCount+5)}>Increase 5times</button>
     </div>

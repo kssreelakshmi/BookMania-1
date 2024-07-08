@@ -1,4 +1,4 @@
-import React,{useContext, useContext} from 'react'
+import React,{useContext} from 'react'
 import {Context} from './Context'
 
 const Maincomponent = () => {

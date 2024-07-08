@@ -11,7 +11,16 @@ import Reduce from './Reduce.jsx'
 // import Forms from './Forms.jsx'
 import Layout from './Layout.jsx'
 import Memo from './Memo.jsx'
+import Practice from './Practice.jsx'
+import Test from './Test.jsx'
+import Mult from './Mult.jsx'
+import Dropdown from './Dropdown.jsx'
+import LoginForm from './LoginForm.jsx'
 function App() {
+  const user = ({
+    email : 'kssreelakshmi2211@gmail.com',
+    password : 'Sree2211'
+})
 //  const fruits = [{id :1,name :'banana',calories :120},
 //                   {id :2,name :'apple',calories :85},
 //                   {id :3,name :'mango',calories :65},
@@ -23,7 +32,9 @@ function App() {
 
   return(
     <>
-    <Memo/>
+    <LoginForm user={user}/>
+    {/* <Dropdown/> */}
+    
 
     {/* <Header></Header> */}
     {/* <Food></Food> */}
