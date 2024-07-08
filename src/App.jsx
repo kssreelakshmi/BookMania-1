@@ -8,7 +8,6 @@ import Button from  './Button.jsx'
 import Effect from './Effect.jsx'
 import Ref from './Ref.jsx'
 import Reduce from './Reduce.jsx'
-// import Forms from './Forms.jsx'
 import Layout from './Layout.jsx'
 import Memo from './Memo.jsx'
 import Practice from './Practice.jsx'
@@ -16,6 +15,8 @@ import Test from './Test.jsx'
 import Mult from './Mult.jsx'
 import Dropdown from './Dropdown.jsx'
 import LoginForm from './LoginForm.jsx'
+import Forms from './Forms.jsx'
+import CustomCount from './CustomCount.jsx'
 function App() {
   const user = ({
     email : 'kssreelakshmi2211@gmail.com',
@@ -32,7 +33,8 @@ function App() {
 
   return(
     <>
-    <LoginForm user={user}/>
+    {/* <Forms user={user}/> */}
+    <CustomCount/>
     {/* <Dropdown/> */}
     
 

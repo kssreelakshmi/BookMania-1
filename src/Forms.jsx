@@ -1,36 +1,65 @@
 import React, { useState } from 'react'
-import './forms.css'
+// import './forms.css'
 
-const Forms = () => {
-    let [username,setUsername] = useState("");
-    let [password,setPassword] = useState("");
+const Forms = ({user}) => {
+    const [email,setEmail] = useState("");
+    const [password,setPassword] = useState("");
+    const [status ,setStatus] = useState('');
+    const [isSubmit,setSubmit] = useState(false);
+    const [isDisabled,setDisabled] = useState(false);
 
+    function validateInputs(){
+        if(user.email === email&& user.password === password){
+        setStatus('submitted successfully')
+        setSubmit(true)
+        setDisabled(true)
+      }
+      else if(user.email === email && user.password !== password){
+        setStatus('password mismatch')
+        setSubmit(false)
+      }
+      else if(user.email !== email && user.password === password){
+        setStatus('email mismatch')
+        setSubmit(false)
+      }
+      else{
+        setStatus('credentials mistmatch')
+        setSubmit(false)
+      }
+      setTimeout(() => setStatus(''), 5000);
+
+    }
+
+
+    
+    const handleEmail = (e) =>{
+        setEmail(e.target.value);
+        validateInputs();
+    }
+    
+    const handlePassword = (e) =>{
+        setPassword(e.target.value)
+        validateInputs();
+    }
     const handleLogin = (e) =>{
-    //     e.preventDefault();
-    //     alert(`${username} ${password}`)
-    }
-
-    const updateUsername = (event) =>{
-        setUsername(event.target.value);
-    }
-
-    const updatePassword = (event) =>{
-        setPassword(event.target.value)
+        e.preventDefault();
+        validateInputs();
     }
 
 
 
   return (
     <div className='box'>
-        <form className='form' action="" onSubmit={handleLogin()}>
+        <form className='form' action="" onSubmit={(e)=>handleLogin(e)}>
             <h3 className='head'>Login</h3>
-            <label htmlFor="" className='form-label'>Username</label>
-            <input type="text" className='form-input' placeholder='Enter your username' onChange={updateUsername()}/>
+            <label htmlFor="" >Email</label>
+            <input type="email" value={email} disabled = {isDisabled} onChange={(e)=>handleEmail(e)}/>
 
             <label className='form-label' >Password</label>
-            <input type="password" className='form-input'placeholder='Enter your password' onChange={updatePassword()}/>
+            <input type="password" value={password} disabled = {isDisabled} onChange={(e)=>handlePassword(e)}/>
 
-            <button type='submit'>Submit</button>
+            {!isSubmit && <button type='submit'>Submit</button>}
+            <p>{status}</p>
         </form>
     </div>
   )
