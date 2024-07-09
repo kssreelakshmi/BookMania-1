@@ -17,6 +17,7 @@ import Dropdown from './Dropdown.jsx'
 import LoginForm from './LoginForm.jsx'
 import Forms from './Forms.jsx'
 import CustomCount from './CustomCount.jsx'
+import Cartform from './Cartform.jsx'
 function App() {
   const user = ({
     email : 'kssreelakshmi2211@gmail.com',
@@ -34,7 +35,8 @@ function App() {
   return(
     <>
     {/* <Forms user={user}/> */}
-    <CustomCount/>
+    {/* <CustomCount/> */}
+    <Cartform />
     {/* <Dropdown/> */}
     
 
